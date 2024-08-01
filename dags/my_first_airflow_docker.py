@@ -19,7 +19,7 @@ with DAG(
     )
     tarefa_2 = BashOperator(
         task_id = 'create_file',
-        bash_command = 'touch "/opt/airflow/test/test_dir/test.txt"'
+        bash_command = 'touch "/opt/airflow/test/test_dir/test.txt={{ data_interval_end }}"'
     )
     tarefa_3 = BashOperator(
         task_id = 'write_file',
